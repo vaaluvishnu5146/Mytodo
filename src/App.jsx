@@ -1,13 +1,11 @@
-import "./App.css";
 import Todo from "./components/Todo";
-import Counter from "./components/Counter";
+import "./app.css";
 
 function App() {
   return (
-    <>
+    <div className="container py-5">
       <Todo />
-      <Counter />
-    </>
+    </div>
   );
 }
 
