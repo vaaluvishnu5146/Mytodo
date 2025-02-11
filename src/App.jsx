@@ -1,12 +1,8 @@
-import Todo from "./components/Todo";
+// import Todo from "./components/Todo";
 import "./app.css";
 
 function App() {
-  return (
-    <div className="container py-5">
-      <Todo />
-    </div>
-  );
+  return <p>React App</p>;
 }
 
 export default App;

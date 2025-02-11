@@ -13,3 +13,10 @@ h5,
 h6 {
   margin: 0px;
 }
+
+.circle {
+  width: 100px;
+  height: 100px;
+  background: green;
+  border-radius: 50%;
+}

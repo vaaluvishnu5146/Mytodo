@@ -1,7 +1,31 @@
-import { useState } from "react";
+import { useState, useLayoutEffect, useEffect } from "react";
 
 function Counter() {
   const [count, setCount] = useState(0);
+
+  // Handle:componentDidMount
+  useEffect(() => {
+    console.log("Running useEffect");
+    return () => {
+      alert("You are removing Counter component");
+    };
+  }, []);
+
+  // Handle: componentWillMount
+  useLayoutEffect(() => {
+    console.log("Running layout Effect");
+  }, []);
+
+  // Handle:componentDidUpdate
+  useEffect(() => {
+    console.log("After");
+  }, [count]);
+
+  // Handle: componentWillUpdate
+  useLayoutEffect(() => {
+    console.log("Before");
+  }, [count]);
+
   return (
     <>
       <button

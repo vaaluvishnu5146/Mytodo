@@ -1,18 +1,54 @@
 import React from "react";
-import Para from "./Para";
 
 class Circle extends React.Component {
   constructor(props) {
     super(props);
-
-    console.log(props);
-    this.props.cb("Hello here!");
+    this.state = {
+      count: 0,
+    };
   }
+
+  // When dom tree is ready to get rendered into ui as website
+  UNSAFE_componentWillMount() {
+    console.log("Before Mounting");
+  }
+
+  // When Dom tree is ready and its already rendered into the UI
+  componentDidMount() {
+    console.log("After Mounting");
+  }
+
+  UNSAFE_componentWillUpdate() {
+    console.log("Before update");
+  }
+
+  componentDidUpdate() {
+    console.log("After update");
+  }
+
+  shouldComponentUpdate() {
+    return true;
+  }
+
+  static getDerivedStateFromProps() {}
+
+  componentWillUnmount() {}
+
+  componentDidCatch() {}
 
   render() {
     return (
       <div className="circle">
-        <Para text={this.props.text} />
+        <p
+          onClick={() =>
+            this.setState({
+              ...this.state,
+              count: this.state.count + 1,
+            })
+          }
+        >
+          {this.props.text}
+        </p>
       </div>
     );
   }
