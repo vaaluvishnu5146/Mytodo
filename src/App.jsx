@@ -1,8 +1,13 @@
 // import Todo from "./components/Todo";
 import "./app.css";
+import SimpleForm from "./components/SimpleForm";
 
 function App() {
-  return <p>React App</p>;
+  return (
+    <>
+      <SimpleForm />
+    </>
+  );
 }
 
 export default App;
